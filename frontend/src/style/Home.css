@@ -1,0 +1,72 @@
+/* ============== Custom Bootstrap ============== */
+.bg-lightblue {
+    background-color: #00bfff; /* Light Blue */
+}
+
+.bg-birumuda {
+    background-color: #0099ff; /* Biru muda khas */
+}
+
+.login-button-white {
+    background-color: #fff;
+    color: #0099ff;
+}
+
+.login-button {
+    background-color: #0099ff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+.navbar-brand{
+    font-weight: 500;
+    color: #0099ff;
+    transition: 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #33aaff;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.2rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #363636;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+@media (min-width: 991px){
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #0099ff;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
