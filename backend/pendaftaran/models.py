@@ -35,20 +35,20 @@ class Pendaftaran(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def clean(self):
-        # Validasi jenis_kelamin
+        # Unuk mempalidasi data yang diterima hanya lakik dan perempuann
         if self.jenis_kelamin.lower() not in ['laki-laki', 'perempuan']:
             raise ValidationError("Jenis kelamin harus 'Laki-laki' atau 'Perempuan'.")
 
     def save(self, *args, **kwargs):
-        # Set end_date otomatis jika tidak diisi
+        # logika agar data dari end_state akan terisi otomatis 
         if self.start_date and not self.end_date:
             self.end_date = self.start_date + timedelta(days=3)
 
-        # Update status jika tanggal telah terlewat
+        # Pengupdaean data Status akan terupdate sendiri 
         if self.end_date and timezone.now().date() > self.end_date and self.status != 'Selesai':
             self.status = 'Terlewatkan'
 
-        # Panggil metode simpan dari parent class
+        # Panggil metode menyimpan data dari parent class
         super().save(*args, **kwargs)
 
     def __str__(self):

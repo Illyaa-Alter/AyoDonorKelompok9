@@ -6,12 +6,7 @@ import Navbar from "../components/Nabvar"
 function About(){
 
     return (
-//       <div className="container-fluid">
-//       <div className="text-center mt-5">
-//           <br /><br /><br /><br /><br /><br /><br /><br />
-//           <h1>Abot Pisan</h1> {/* Menggunakan `text-center` untuk center alignment */}
-//       </div>
-//   </div>
+
 
 <div className="container-fluid hero-section" 
 style={{ 
@@ -20,11 +15,11 @@ style={{
     display: 'flex', 
     alignItems: 'center', 
     justifyContent: 'center',
-    paddingTop: '100px' // Menjaga jarak dari navbar
+    paddingTop: '100px' 
 }}
 >
 <div className="row w-75 shadow rounded-4 bg-white">
-    {/* Left Box */}
+   
     <div className="col-md-6 d-flex flex-column justify-content-center align-items-start p-5">
         <h1 className="mb-4">
             Tentang <span className="highlight" style={{ color: '#007bff', fontWeight: 'bold' }}>Kami</span>
@@ -48,7 +43,7 @@ style={{
         </ul>
     </div>
 
-    {/* Right Box */}
+    
     <div className="col-md-6 d-flex justify-content-center align-items-center bg-light rounded-4">
         <img 
             src="https://via.placeholder.com/400" 

@@ -15,14 +15,14 @@ export default function MyMultilineFields(props) {
         formState 
       }) => (
         <TextField
-          sx={{ width }} // Corrected, use width directly without wrapping in an object
+          sx={{ width }}
           id="standard-multiline-static"
           label={label}
           multiline
-          rows={1} // Changed to 4 rows for better visibility of multiline input
-          onChange={onChange} // Use the onChange handler from react-hook-form
-          value={value} // Ensure value is controlled by react-hook-form (remove defaultValue)
-          // Removed defaultValue="Default Value" to avoid conflicting with the controlled input
+          rows={1}
+          onChange={onChange}
+          value={value}
+          
           placeholder={placeholder}
           variant="standard"
           error = {!!error}

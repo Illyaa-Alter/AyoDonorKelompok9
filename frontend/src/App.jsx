@@ -15,15 +15,13 @@ import Pendaftaran from './containers/Pendaftaran';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Create from './Pages/Create';
-import Riwayat from './Pages/Riwayat';
-import ProjectDetail from './Pages/ProjectDetail';
 import History from './Pages/History';
+import DetailPendaftar from './Pages/DetailPendaftar';
 
 import Layout from './hocs/Layout';
 
 function App() {
     return (
-        // <Provider store={store}> {/* Menyediakan store Redux */}
         <Router>
             <Layout>
                 <Routes>
@@ -33,11 +31,10 @@ function App() {
                     <Route path="/riwayat" element={<History />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Signup" element={<Signup />} />
-                    <Route path="/project/:id" element={<ProjectDetail />} />
+                    <Route path="/detailPendaftar/:id" element={<DetailPendaftar />} />
                 </Routes>
             </Layout>
         </Router>
-        // </Provider>
     );
 }
 

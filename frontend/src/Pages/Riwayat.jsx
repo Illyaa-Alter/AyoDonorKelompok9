@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AxiosInstance from "./axios";
 import Dayjs from "dayjs";
 import { Box, IconButton } from '@mui/material';
+import BadgeIcon from '@mui/icons-material/Badge';
 import { Edit as EditIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk routing
 
@@ -116,10 +117,11 @@ function Riwayat() {
         <Box display="flex" justifyContent="space-between">
           <IconButton
             color="primary"
-            onClick={() => navigate(`/edit/${row.original.id}`)}
+            onClick={() => navigate(`/detail/${row.original.id}`, { state: row.original })}
           >
             <EditIcon />
           </IconButton>
+          
         </Box>
       )}
     />

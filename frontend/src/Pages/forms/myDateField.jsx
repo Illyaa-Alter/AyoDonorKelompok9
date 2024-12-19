@@ -14,17 +14,17 @@ export default function MyDateField(props) {
         control={control}
         render={({
           field: { onChange, value },
-          fieldState: { error }, // Mendapatkan error dari fieldState
+          fieldState: { error },
         }) => (
           <DatePicker
-            label={label} // Menggunakan label dari props
-            sx={{ width }} // Memperbaiki penulisan width
+            label={label}
+            sx={{ width }}
             onChange={onChange}
             value={value}
             slotProps={{
               textField: {
-                error: !!error, // Menampilkan error jika ada
-                helperText: error?.message, // Menampilkan pesan error
+                error: !!error,
+                helperText: error?.message,
               },
             }}
           />

@@ -6,7 +6,7 @@ import AxiosInstance from "./axios";
 import Dayjs from "dayjs";
 import { Box, IconButton } from '@mui/material';
 import { Edit as EditIcon } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk routing
+import { useNavigate } from 'react-router-dom';
 
 function Riwayat() {
   const [registrationsData, setRegistrationsData] = useState([]);
@@ -52,7 +52,6 @@ function Riwayat() {
     return daerah ? daerah.name : 'Unknown';
   }, [regionsData]);
 
-  // Define columns
   const columns = useMemo(
     () => [
       { accessorKey: "name", header: "Name", size: 150 },
@@ -61,7 +60,6 @@ function Riwayat() {
       { accessorKey: "daerah", header: "Daerah Domisili", size: 150, accessorFn: (row) => getDaerahName(row.daerah) },
       { accessorKey: "klinik", header: "Klinik", size: 150, accessorFn: (row) => getKlinikName(row.klinik) },
       { accessorFn: (row) => Dayjs(row.start_date).format("DD-MM-YYYY"), header: "Start Date", size: 150 },
-      { accessorFn: (row) => Dayjs(row.end_date).format("DD-MM-YYYY"), header: "End Date", size: 150 },
       { accessorKey: "status", header: "Status", size: 150 },
     ],
     [registrationsData, clinicsData, regionsData]
@@ -79,11 +77,11 @@ function Riwayat() {
             columns={columns}
             data={registrationsData}
             enableRowActions
-            renderRowActions={({ row, table }) => (
+            renderRowActions={({ row }) => (
               <Box sx={{ display: 'flex', flexWrap: 'nowrap', gap: '8px' }}>
                 <IconButton
                   color="secondary"
-                  onClick={() => navigate(`/pendaftaran/${row.id}`)} // Navigating to the edit page
+                  onClick={() => navigate(`/detailPendaftar/${row.original.id}`, { state: { detail: row.original } })}
                 >
                   <EditIcon />
                 </IconButton>

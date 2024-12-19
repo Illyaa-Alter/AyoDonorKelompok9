@@ -13,16 +13,15 @@ import Dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 
 function Create() {
-  const [daerah, setDaerah] = useState([]); // Data untuk 'daerah'
-  const [klinik, setKlinik] = useState([]); // Data untuk 'klinik'
-  const [loading, setLoading] = useState(true); // Status loading
+  const [daerah, setDaerah] = useState([]);
+  const [klinik, setKlinik] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const jenisKelaminOptions = [
     { id: 'Laki-laki', name: 'Laki-laki' },
     { id: 'Perempuan', name: 'Perempuan' },
   ];
 
-  // Mengambil data daerah dan klinik dari server
   const fetchData = async () => {
     try {
       const [resDaerah, resKlinik] = await Promise.all([

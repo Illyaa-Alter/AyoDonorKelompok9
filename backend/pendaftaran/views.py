@@ -28,12 +28,19 @@ class DaerahViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=400)
 
     def update(self, request, pk=None):
-        daerah = get_object_or_404(self.queryset, pk=pk)  # Perbaikan variabel
+        daerah = get_object_or_404(self.queryset, pk=pk)
         serializer = self.serializer_class(daerah, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
+
+    # Adding the retrieve method to handle GET requests for single object
+    def retrieve(self, request, pk=None):
+        daerah = get_object_or_404(self.queryset, pk=pk)
+        serializer = self.serializer_class(daerah)
+        return Response(serializer.data)
+
 
 class KlinikViewSet(viewsets.ViewSet):
     queryset = Klinik.objects.all()
@@ -59,6 +66,11 @@ class KlinikViewSet(viewsets.ViewSet):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
+
+    def retrieve(self, request, pk=None):
+        clinic = get_object_or_404(self.queryset, pk=pk)
+        serializer = self.serializer_class(clinic)
+        return Response(serializer.data)
 
 class PendaftaranViewSet(viewsets.ViewSet):
     queryset = Pendaftaran.objects.all()
