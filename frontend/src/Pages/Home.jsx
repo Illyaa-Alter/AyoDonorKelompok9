@@ -77,9 +77,6 @@ function Home() {
                 <li>Lokasi: PMI Kota Bandung, Jalan RE Martadinata No. 45</li>
                 <li>Kategori: Semua golongan darah diterima</li>
               </ul>
-              <a href="donor_darah.html" className="btn btn-outline-primary btn-lg">
-                Pelajari Lebih Lanjut
-              </a>
             </div>
           </div>
         </div>
