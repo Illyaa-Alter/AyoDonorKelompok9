@@ -73,7 +73,7 @@ function DetailPendaftar() {
         paddingTop: '100px', 
     }}
 >
-    <div className="row w-75 shadow-lg rounded-4 bg-white p-4 mb-5">
+    <div className="row w-75 shadow-lg rounded-4 bg-white p-5 mb-5">
 
         <div className="col-12 text-center mb-4">
             <h3 className="text-dark font-weight-bold" style={{ fontSize: '1.5rem' }}>Detail Pendaftar</h3>

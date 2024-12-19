@@ -99,7 +99,7 @@ function Create() {
     >
       <br /><br /><br /><br /><br />
 
-      <div className="row w-75 shadow-lg rounded-4 bg-white p-4 mb-5">
+      <div className="row w-75 shadow-lg rounded-4 bg-white p-5">
       <div className="col-12 text-center mb-5">
             <h3 className="text-dark font-weight-bold mt-3" style={{ fontSize: '1.3rem' }}>Buat Pendaftaran</h3>
       </div>

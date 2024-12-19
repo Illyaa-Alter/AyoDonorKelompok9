@@ -9,7 +9,7 @@ class Daerah(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name or "Daerah Tanpa Nama"  # Pengamanan jika `name` kosong
+        return self.name
 
 class Klinik(models.Model):
     name = models.CharField(unique=True, max_length=50)
@@ -20,7 +20,7 @@ class Klinik(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name or "Klinik Tanpa Nama"  # Pengamanan jika `name` kosong
+        return self.name
 
 class Pendaftaran(models.Model):
     name = models.CharField(max_length=50)
