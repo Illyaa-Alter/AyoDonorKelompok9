@@ -20,7 +20,7 @@ function Home() {
               Platform ini dirancang untuk membantu Anda mengelola informasi dengan lebih mudah dan efisien.
               Temukan berbagai fitur menarik yang kami sediakan.
             </p>
-            <a href="/pendaftaran" className="btn btn-light btn-lg mt-5 text-primary">
+            <a href="/Create" className="btn btn-light btn-lg mt-5 text-primary">
               Mulai Sekarang
             </a>
           </div>
