@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
     const [count, setCount] = useState(0);
-    const navigate = useNavigate(); // Menggunakan useNavigate hook dari 'react-router-dom'
+    const navigate = useNavigate();
 
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">

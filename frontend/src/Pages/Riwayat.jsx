@@ -7,33 +7,33 @@ import Dayjs from "dayjs";
 import { Box, IconButton } from '@mui/material';
 import BadgeIcon from '@mui/icons-material/Badge';
 import { Edit as EditIcon } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk routing
+import { useNavigate } from 'react-router-dom'; 
 
 function Riwayat() {
-  const [myData, setMyData] = useState([]); // Inisialisasi sebagai array kosong
-  const [loading, setLoading] = useState(true); // Inisialisasi loading sebagai true
-  const [pendaftarans, setPendaftarans] = useState([]); // Menyimpan data pendaftaran
-  const [kliniks, setKliniks] = useState([]); // Menyimpan data klinik
-  const [daerahs, setDaerahs] = useState([]); // Menyimpan data daerah
-  const navigate = useNavigate(); // Inisialisasi hook navigate untuk routing
+  const [myData, setMyData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [pendaftarans, setPendaftarans] = useState([]);
+  const [kliniks, setKliniks] = useState([]);
+  const [daerahs, setDaerahs] = useState([]); 
+  const navigate = useNavigate(); 
 
   const getData = async () => {
     try {
       // Mengambil data pendaftaran
       const res = await AxiosInstance.get("pendaftaran/");
-      setMyData(res.data); // Set data dari response pendaftaran
+      setMyData(res.data);
 
       // Mengambil data klinik
       const klinikRes = await AxiosInstance.get("klinik/");
-      setKliniks(klinikRes.data); // Set data klinik
+      setKliniks(klinikRes.data);
 
       // Mengambil data daerah
       const daerahRes = await AxiosInstance.get("daerah/");
-      setDaerahs(daerahRes.data); // Set data daerah
-      setLoading(false); // Set loading menjadi false setelah data diterima
+      setDaerahs(daerahRes.data);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setLoading(false); // Tetap set loading menjadi false jika ada error
+      setLoading(false); 
     }
   };
 
@@ -44,26 +44,26 @@ function Riwayat() {
   // Fungsi untuk mencari nama pendaftar berdasarkan id
   const getPendaftarName = (pendaftarId) => {
     const pendaftar = pendaftarans.find(p => p.id === pendaftarId);
-    return pendaftar ? pendaftar.name : 'Unknown'; // Mengembalikan nama pendaftar atau 'Unknown' jika tidak ditemukan
+    return pendaftar ? pendaftar.name : 'Unknown';
   };
 
   // Fungsi untuk mencari nama klinik berdasarkan id
   const getKlinikName = (klinikId) => {
     const klinik = kliniks.find(k => k.id === klinikId);
-    return klinik ? klinik.name : 'Unknown'; // Mengembalikan nama klinik atau 'Unknown' jika tidak ditemukan
+    return klinik ? klinik.name : 'Unknown';
   };
 
   // Fungsi untuk mencari nama daerah berdasarkan id
   const getDaerahName = (daerahId) => {
     const daerah = daerahs.find(d => d.id === daerahId);
-    return daerah ? daerah.name : 'Unknown'; // Mengembalikan nama daerah atau 'Unknown' jika tidak ditemukan
+    return daerah ? daerah.name : 'Unknown';
   };
 
   // Define columns
   const columns = useMemo(
     () => [
       {
-        accessorKey: "name", // Pastikan nama field cocok dengan data dari API
+        accessorKey: "name",
         header: "Name",
         size: 150,
       },
@@ -73,7 +73,7 @@ function Riwayat() {
         size: 150,
       },
       {
-        accessorKey: "nim", // Normal accessorKey
+        accessorKey: "nim",
         header: "NIM",
         size: 150,
       },
@@ -105,7 +105,7 @@ function Riwayat() {
         size: 150,
       },
     ],
-    [pendaftarans, kliniks, daerahs] // Re-render jika data pendaftar, klinik, atau daerah berubah
+    [pendaftarans, kliniks, daerahs]
   );
 
   return (
