@@ -12,7 +12,7 @@ function Home() {
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">
             <div className="container-fluid">
-                <a className="navbar-brand me-auto" href="#">AyoDonor</a>
+                <a className="navbar-brand me-auto text-primary" href="/">AyoDonor</a>
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div className="offcanvas-header">
                         <h5 className="offcanvas-title fw-bold" id="offcanvasNavbarLabel">AyoDonor</h5>
@@ -21,7 +21,7 @@ function Home() {
                     <div className="offcanvas-body">
                         <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                             <li className="nav-item"><a className="nav-link mx-lg-3 active" aria-current="page" href="/">Home</a></li>
-                            <li className="nav-item"><a className="nav-link mx-lg-3" href="#">Info Kesehatan</a></li>
+                            <li className="nav-item"><a className="nav-link mx-lg-3" href="/info">Info Kesehatan</a></li>
                             <li className="nav-item"><a className="nav-link mx-lg-3" href="/Create">Pendaftaran</a></li>
                             <li className="nav-item"><a className="nav-link mx-lg-3" href="/riwayat">Riwayat</a></li>
                             <li className="nav-item"><a className="nav-link mx-lg-3" href="/About">Tentang Kami</a></li>

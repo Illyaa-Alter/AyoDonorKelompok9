@@ -87,8 +87,22 @@ function Create() {
   };
 
   return (
-    <div className="container-fluid">
-      <br /><br /><br /><br /><br /><br /><br /><br />
+    <div className="container-fluid hero-section" 
+    style={{ 
+        backgroundColor: '#fffff',  
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        paddingTop: '100px', 
+    }}
+    >
+      <br /><br /><br /><br /><br />
+
+      <div className="row w-75 shadow-lg rounded-4 bg-white p-4 mb-5">
+      <div className="col-12 text-center mb-5">
+            <h3 className="text-dark font-weight-bold mt-3" style={{ fontSize: '1.3rem' }}>Buat Pendaftaran</h3>
+      </div>
       {loading ? (
         <p>Loading Data...</p>
       ) : (
@@ -162,6 +176,7 @@ function Create() {
           </Box>
         </form>
       )}
+      </div>
     </div>
   );
 }
